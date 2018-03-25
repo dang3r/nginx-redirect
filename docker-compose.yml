@@ -7,6 +7,9 @@ services:
     environment:
       DOMAIN_NAME: ${DOMAIN_NAME}
       TARGET_URL: ${TARGET_URL}
+    volumes:
+      - /etc/ssl/ssl.cert:/etc/ssl/ssl.cert:ro
+      - /etc/ssl/ssl.key:/etc/ssl/ssl.key:ro
     ports:
       - "80:80"
       - "443:443"
