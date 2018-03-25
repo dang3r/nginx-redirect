@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  nginx:
+    image: dang3r/nginx-redirect:latest
+    restart: always
+    environment:
+      DOMAIN_NAME: ${DOMAIN_NAME}
+      TARGET_URL: ${TARGET_URL}
+    ports:
+      - "80:80"
+      - "443:443"
